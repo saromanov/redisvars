@@ -1,4 +1,4 @@
-# redisvars
+# redisvars [![Build Status](https://travis-ci.org/saromanov/redisvars.svg?branch=master)](https://travis-ci.org/saromanov/redisvars)
 golang maps with redis backend
 
 ## Usage
