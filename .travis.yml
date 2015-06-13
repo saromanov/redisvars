@@ -6,3 +6,6 @@ go:
   - tip
 before_install:
   - go get "github.com/fzzy/radix/redis"
+
+services:
+  - redis-server
