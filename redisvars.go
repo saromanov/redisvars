@@ -26,3 +26,7 @@ func New(addr string)*RedisVars {
 func (rv *RedisVars) NewDict()*RedisDict {
 	return NewRedisDict(rv.client)
 }
+
+func (rv *RedisVars) NewList()*RedisList {
+	return NewRedisList(rv.client)
+}
