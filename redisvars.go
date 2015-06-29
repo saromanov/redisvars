@@ -30,3 +30,7 @@ func (rv *RedisVars) NewDict() *RedisDict {
 func (rv *RedisVars) NewList() *RedisList {
 	return NewRedisList(rv.client)
 }
+
+func (rv *RedisVars) NewStruct() *RedisStruct {
+	return NewRedisStruct(rv.client)
+}
