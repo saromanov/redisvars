@@ -1,4 +1,4 @@
-# redisvars [![Build Status](https://travis-ci.org/saromanov/redisvars.svg?branch=master)](https://travis-ci.org/saromanov/redisvars)
+# redisvars [![Build Status](https://travis-ci.org/saromanov/redisvars.svg?branch=master)](https://travis-ci.org/saromanov/redisvars) [![Coverage Status](https://coveralls.io/repos/saromanov/redisvars/badge.svg)](https://coveralls.io/r/saromanov/redisvars)
 golang maps with redis backend
 
 ## Why?
