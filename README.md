@@ -23,5 +23,28 @@ lst := rv.NewList()
 lst.SetList("DDDDD", []string{"A", "B", "C"})
 lst.CommitList()
 ```
+Struct
+```go
+
+import
+(
+	"encoding/json"
+)
+
+type Foobar struct {
+	Item string
+	Data int
+}
+
+elem := &Foobar{"first",1}
+rv := redisvars.New("localhost:6379")
+rstr := rv.NewStruct()
+rstr.SetStruct("foobar1",elem)
+rstr.CommitStruct()
+res := rstr.GetStruct("foobar1")
+var foobar Foobar
+err := json.Unmarshal([]byte(res), &foobar)
+fmt.Println(foobar.Item, foobar.Data)
+```
 ## License
 MIT
