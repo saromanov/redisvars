@@ -11,7 +11,7 @@ type RedisVars struct {
 }
 
 //New is create redis client. If server is not found, returns panic message
-func New(addr string)*RedisVars {
+func New(addr string) *RedisVars {
 	rv := new(RedisVars)
 	clinet, err := redis.DialTimeout("tcp", addr, time.Duration(10)*time.Second)
 	if err != nil {
@@ -23,10 +23,10 @@ func New(addr string)*RedisVars {
 }
 
 //NewDict provides creation of NewRedisDict object
-func (rv *RedisVars) NewDict()*RedisDict {
+func (rv *RedisVars) NewDict() *RedisDict {
 	return NewRedisDict(rv.client)
 }
 
-func (rv *RedisVars) NewList()*RedisList {
+func (rv *RedisVars) NewList() *RedisList {
 	return NewRedisList(rv.client)
 }

@@ -1,7 +1,6 @@
 package redisvars
 
-import
-(
+import (
 	"testing"
 )
 
@@ -19,7 +18,7 @@ func TestBasicGetting(t *testing.T) {
 	}
 }
 
-func TestGetAfterOverwrite (t *testing.T) {
+func TestGetAfterOverwrite(t *testing.T) {
 	rv := New("localhost:6379")
 	dict := rv.NewDict()
 	key := "A"
@@ -49,10 +48,10 @@ func TestGetFromEmpty(t *testing.T) {
 	}
 }
 
-func TestSetAndGetManyElements (t *testing.T) {
+func TestSetAndGetManyElements(t *testing.T) {
 	rv := New("localhost:6379")
 	dict := rv.NewDict()
-	keys := map[string]string{"A":"B", "C":"D","E":"F"}
+	keys := map[string]string{"A": "B", "C": "D", "E": "F"}
 	for key, value := range keys {
 		dict.Delete(key)
 		dict.Set(key, value)
@@ -60,8 +59,8 @@ func TestSetAndGetManyElements (t *testing.T) {
 	dict.Commit()
 	for key, value := range keys {
 		result := dict.Get(key)
-	if result != value {
-		t.Errorf("%s not match %s", result, value)
-	}
+		if result != value {
+			t.Errorf("%s not match %s", result, value)
+		}
 	}
 }
